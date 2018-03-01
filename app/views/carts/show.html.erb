@@ -1,3 +1,5 @@
+<%if cart.count != 0%>
+
 <section class="cart-show">
 
   <header class="page-header">
@@ -51,3 +53,20 @@
   </div>
 
 </section>
+
+<% else %>
+
+  <section class="cart-show">
+
+  <header class="page-header">
+    <h1>My Cart</h1>
+  </header>
+
+  <h2>Your cart is empty!</h2>
+  <br>
+  <button><%= link_to 'Go Back Home', :root %></button>
+  
+
+</section>
+
+<% end %>
