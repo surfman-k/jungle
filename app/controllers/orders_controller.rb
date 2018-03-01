@@ -11,11 +11,7 @@ class OrdersController < ApplicationController
     order  = create_order(charge)
 
     if order.valid?
-      @order_information = cart.dup
-
       empty_cart!
-      puts "------THIUS IS IT!-------------------"
-      puts @order_information
       redirect_to order, notice: 'Your Order has been placed.'
     else
       redirect_to cart_path, flash: { error: order.errors.full_messages.first }
