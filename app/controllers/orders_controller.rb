@@ -1,5 +1,7 @@
 class OrdersController < ApplicationController
 
+  attr_accessor :order_information
+
   def show
     @order = Order.find(params[:id])
   end
@@ -9,7 +11,11 @@ class OrdersController < ApplicationController
     order  = create_order(charge)
 
     if order.valid?
+      @order_information = cart.dup
+
       empty_cart!
+      puts "------THIUS IS IT!-------------------"
+      puts @order_information
       redirect_to order, notice: 'Your Order has been placed.'
     else
       redirect_to cart_path, flash: { error: order.errors.full_messages.first }
@@ -66,5 +72,10 @@ class OrdersController < ApplicationController
     end
     total
   end
+
+  def order_information
+    cart
+  end
+  helper_method :order_information
 
 end
