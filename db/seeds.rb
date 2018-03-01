@@ -132,5 +132,14 @@ cat3.products.create!({
   price: 2_483.75
 })
 
+##Reviews
+
+reviews.create!({
+  product_id: 14, 
+  user_id: 2, 
+  description: "Not zebra-ish enough",
+  rating: 3
+})
+
 
 puts "DONE!"
