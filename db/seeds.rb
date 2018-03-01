@@ -134,11 +134,18 @@ cat3.products.create!({
 
 ##Reviews
 
-reviews.create!({
-  product_id: 14, 
-  user_id: 2, 
+Review.create({
+  product_id: 2, 
+  user_id: 1, 
   description: "Not zebra-ish enough",
   rating: 3
+})
+
+Review.create({
+  product_id: 2, 
+  user_id: 2, 
+  description: "I also wish it had more of a zebra pattern...",
+  rating: 2
 })
 
 

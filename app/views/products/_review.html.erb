@@ -1,0 +1,22 @@
+<article class="product-detail">
+
+    <div class="row">
+
+      <div class="col-sm-6">
+        <dl class="dl-horizontal">
+        <%  reviews.each do |review|%>
+          <dt> User </dt>
+          <dd><%= review.user.name %></dd>
+          <dt>Rating</dt>
+          <dd><%= review.rating %></dd>
+          <dt>Review</dt>
+          <dd><%= review.description %></dd>
+          <br>
+          <% end %>
+        </dl>
+      </div>
+    </div>
+
+
+
+</article>
