@@ -33,9 +33,11 @@
     <h2> Reviews </h2>
     <h4> Average Rating: <%= (@reviews.sum("rating"))/(@reviews.count).to_f.round(2) %> </h4>
     <%= render partial: "review", locals:{reviews: @reviews} %>
+    <%= render partial: "newreview" %>
   <% else %>
     <h2> Reviews </h2>
     <p> Be the first to review this product </p>
+    <%= render partial: "newreview" %>
   <% end %>
 
 </section>

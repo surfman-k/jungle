@@ -1,0 +1,17 @@
+<div class="new_review_form">
+
+  <div class="col-sm-6">
+		<h3>Review this product!</h3>
+
+		<%= form_for :review, url: "#{request.original_url}/reviews" do |f| %>
+
+		  Rating: <%= f.select :rating, [5,4,3,2,1] %>
+		  <br>
+		  <br>
+		  Review: <%= f.text_area :description %>
+		  <br>
+		  <%= f.submit "Submit" %>
+
+		<% end %>
+  </div>
+</div>
